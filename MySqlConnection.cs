@@ -5,7 +5,7 @@ namespace Server
 {
     class MySQL
     {
-        static void Main()
+        public static MySqlConnection SQL()
         {
             var stringBuilder = new MySqlConnectionStringBuilder();
 
@@ -20,9 +20,7 @@ namespace Server
             
             var connection = new MySqlConnection(sqlConnectionString);
 
-            connection.Open();
-            Console.WriteLine(connection.State);
-            connection.Close();
+            return connection;
         }
     }
 }
